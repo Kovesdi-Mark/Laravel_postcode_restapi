@@ -1,8 +1,23 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\CountyController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::post('/users/login', [UserController::class, 'login']);
+Route::get('/users', [UserController::class, 'index']);
+
+Route::get('/counties', [CountyController::class, 'index']);
+Route::post('/counties', [CountyController::class, 'store'])
+    ->middleware('auth:sanctum');
+Route::get('/counties/{id}', [CountyController::class, 'show']);
+Route::put('/counties/{id}', [CountyController::class, 'update'])
+    ->middleware('auth:sanctum');
+Route::delete('/counties/{id}', [CountyController::class, 'destroy'])
+    ->middleware('auth:sanctum');
+
+Route::get('/cities', [CityController::class, 'index']);
+Route::post('/cities', [CityController::class, 'store'])
+    ->middleware('auth:sanctum');
+Route::get('/cities/{id}', [CityController::class, 'show']);

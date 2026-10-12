@@ -2,14 +2,14 @@ Endpoints:
 
 |Endpoint              | Method     | Auth | Note                        |
 | -------------------- | ---------- | ---- | --------------------------- |
-|\users                | POST       |      | add new user                |
-|\users                | GET        |      | get all user                |
-|\counties             | GET        |      | get all counties            |
-|\counties             | POST       |  Y   | create new county           |
-|\counties\{id}        | GET        |      | get one county              |
-|\counties\{id}        | PUT/PATCH  |  Y   | edit one county             |
-|\counties\{id}        | DELETE     |  Y   | delete one county           |
-|\cities               | GET        |      | get all cities              |
+|\users\login          | POST       |      | add new user                |     x
+|\users                | GET        |      | get all user                |     x
+|\counties             | GET        |      | get all counties            |     x
+|\counties             | POST       |  Y   | create new county           |     x
+|\counties\{id}        | GET        |      | get one county              |     x
+|\counties\{id}        | PUT/PATCH  |  Y   | edit one county             |     x   
+|\counties\{id}        | DELETE     |  Y   | delete one county           |     x
+|\cities               | GET        |      | get all cities              |     x
 |\cities               | POST       |  Y   | create new city             |
 |\cities\{id}          | GET        |      | get one city                |
 |\cities\{id}          | PUT/PATCH  |  Y   | edit one city               |

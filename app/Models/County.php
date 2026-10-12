@@ -12,4 +12,8 @@ class County extends Model
         'name',
         'badge_url'
     ];
+
+    public function cities(){
+        return $this->hasMany(City::class);
+    }
 }

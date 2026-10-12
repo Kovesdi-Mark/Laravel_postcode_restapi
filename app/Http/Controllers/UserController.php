@@ -28,5 +28,16 @@ class UserController extends Controller
         $user->tokens()->delete();
 
         $user->token = $user->createToken('access')->plainTextToken;
+
+        return response()->json([
+            'user' => $user,
+        ]);
+    }
+
+    public function index(){
+        $users = User::all();
+        return response()->json([
+            'users' => $users
+        ]);
     }
 }
