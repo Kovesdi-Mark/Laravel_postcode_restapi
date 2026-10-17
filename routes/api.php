@@ -18,6 +18,11 @@ Route::delete('/counties/{id}', [CountyController::class, 'destroy'])
     ->middleware('auth:sanctum');
 
 Route::get('/cities', [CityController::class, 'index']);
+Route::get('/counties/{countyId}/cities', [CityController::class, 'indexByCounty']);
 Route::post('/cities', [CityController::class, 'store'])
     ->middleware('auth:sanctum');
 Route::get('/cities/{id}', [CityController::class, 'show']);
+Route::put('/cities/{id}', [CityController::class, 'update'])
+    ->middleware('auth:sanctum');
+Route::delete('/cities/{id}', [CityController::class, 'destroy'])
+    ->middleware('auth:sanctum');

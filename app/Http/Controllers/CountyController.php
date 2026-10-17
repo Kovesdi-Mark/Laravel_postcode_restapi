@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CountyRequest;
 use App\Models\County;
 use Illuminate\Http\Request;
-use PHPUnit\Framework\Constraint\Count;
 
 class CountyController extends Controller
 {
@@ -23,7 +22,7 @@ class CountyController extends Controller
         ]);
     }
 
-    public function show($id){
+    public function show(int $id){
         $county = County::findOrFail($id);
 
         return response()->json([
@@ -39,7 +38,7 @@ class CountyController extends Controller
         ]);
     }
 
-    public function update(CountyRequest $request, $id){
+    public function update(CountyRequest $request, int $id){
         $county = County::findOrFail($id);
         $county->update($request->all());
         
@@ -48,7 +47,7 @@ class CountyController extends Controller
         ]);
     }
 
-    public function destroy($id){
+    public function destroy(int $id){
         $county = County::findOrFail($id);
         $county->delete();
 
